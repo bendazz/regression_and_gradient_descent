@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gradient Descent: Linear Regression Visualizer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <!-- Plotly CDN for contour plot -->
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Linear Regression: Sample Data</h1>
+  </header>
+
+  <main>
+    <section class="controls minimal">
+      <label for="lr">Learning rate</label>
+  <input id="lr" type="number" step="0.001" min="0.0001" max="1" value="0.05" />
+      <button id="startStop">Start</button>
+      <button id="reset">Reset</button>
+      <span id="status" aria-live="polite"></span>
+    </section>
+    <div class="grid">
+      <section class="chart-wrap left">
+        <canvas id="scatter" aria-label="Scatter plot of sample points" role="img"></canvas>
+      </section>
+      <section class="chart-wrap right">
+        <div id="mse-contour" aria-label="Contour plot of MSE over slope and intercept" role="img"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
